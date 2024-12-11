@@ -6,8 +6,15 @@ import ReactDOM from "react-dom/client";
 import "../styles/index.css";
 
 //import your own components
-import Home from "./component/home.jsx";
+import SecondsCounter from "./component/SecondsCounter.jsx";
 
-//render your react application
-ReactDOM.createRoot(document.getElementById('app')).render(<Home/>);
+let num1= 0
 
+setInterval(function () {
+    num1++; // Incrementa el primer dígito
+  
+    // Renderiza la aplicación con el valor actualizado
+    ReactDOM.createRoot(document.getElementById("app")).render(
+      <SecondsCounter counter={num1} />
+    );
+  }, 1000); // Intervalo de 1 segundo
